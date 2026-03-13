@@ -38,64 +38,6 @@ The architecture follows a multi-entity relational schema representing the elect
 
 The system was designed to handle over 17 million voters with projected growth over time, requiring scalable storage and indexing strategies.
 
-## Key Features
-### 1. Computerised Electoral Role
-Maintains a complete registry of all eligible voters including:
-- Personal identification information
-- Residential and postal addresses
-- Contact details
-- Electoral division assignment
-
-The system ensures data integrity and accurate division assignment based on residential addresses.
-
-### 2. Election Event Management
-Stores metadata related to election events such as:
-- Election serial number
-- Election date
-- Election type
-- Total electoral divisions
-- Registered voter counts at close of rolls
-
-This enables historical election tracking and statistical analysis.
-
-### 3. Electoral Division Management
-Each electoral division stores:
-- Division name
-- State/territory
-- Current voter counts
-- Historical voter records
-- Current Member of Parliament
-
-The historical data supports longitudinal analysis of electoral demographics.
-
-### 4. Candidate and Party Registration
-Supports candidate registration for elections including:
-- Candidate identity
-- Political party affiliation
-- Electoral division contesting
-- Contact information
-
-Political party information includes:
-- Party codes
-- Party names
-- Party logos
-- Headquarters information
-- Official contact personnel
-
-### 5. Secure Ballot Paper Storage
-Electronic ballot papers store:
-- Election identifier
-- Electoral division
-- Ordered voter preferences
-
-To preserve ballot anonymity, the system does not store voter identifiers alongside ballots, ensuring compliance with election integrity requirements.
-Instead, a separate Ballot Issuance Record logs when a ballot is issued to a voter.
-
-### 6. Preferential Vote Counting
-Implements Australia's full preferential voting system, where voters rank all candidates in order of preference. The system supports:
-- Primary Vote Counting: Counts first-preference votes for each candidate.
-- Preference Redistribution: Eliminates the lowest-ranked candidate and redistributes votes until a majority winner emerges.
-
 ## Database Design
 ### Conceptual Model
 A complete Entity-Relationship (ER) Model was developed using UML notation to represent:
@@ -152,33 +94,6 @@ Partition keys were selected based on query access patterns, such as:
 - ElectionDate
 
 Partitioning allows the database to scan only relevant partitions instead of entire tables.
-
-### Stored Procedures and Functions
-#### previouslyVoted()
-Purpose: Ensures election integrity by verifying whether a voter has already cast a ballot in a given election.
-
-Inputs:
-- ElectionEventID
-- DivisionName
-- VoterID
-
-Output: Boolean result indicating whether the voter has already voted.
-
-#### primaryVoteCount()
-Purpose: Counts first-preference votes for each candidate in a specific election and division.
-
-Functionality:
-1. Retrieves all ballot papers for a given election and division.
-2. Extracts first preference selections.
-3. Aggregates votes by candidate.
-4. Updates the ElectionResults table.
-
-#### distributePreferences()
-Implements the preferential vote redistribution algorithm:
-1. Identify candidate with the lowest votes
-2. Redistribute their ballots according to next preferences
-3. Repeat until a candidate obtains majority
-This simulates the official Australian preferential counting process.
 
 ## Example SQL Capabilities Demonstrated
 The project demonstrates advanced SQL capabilities including:
