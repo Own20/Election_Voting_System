@@ -7,25 +7,6 @@
 
 
 
--- Display the contents of all tables to verify the data has been inserted correctly
-SELECT * FROM ballot;
-SELECT * FROM ballotpreferences;
-SELECT * FROM candidate;
-SELECT * FROM contests;
-SELECT * FROM electionevent;
-SELECT * FROM electionmaster;
-SELECT * FROM electoraldivision;
-SELECT * FROM electoraldivisionhistory;
-SELECT * FROM issuancerecord;
-SELECT * FROM politicalparty;
-SELECT * FROM prefcountround;
-SELECT * FROM preferencetallyperroundpercandidate;
-SELECT * FROM voterregistry;
-
-
-
-
-
 -- Generate a report showing the total number of voters registered in each of the electoral division, aggregated from the VoterRegistry, sorted in the descending order of the total number of voters
 
 -- INDEX is used to help JOIN operation to perform an Index Seek instead of a full Table Scan on the extremely large VoterRegistry table.
@@ -98,26 +79,3 @@ WHERE IR.ElectionEventID NOT IN (
     WHERE LEFT(CAST(ElectionEventID AS CHAR(11)), 8) 
           IN ('20220520', '20190518')
 );
-
-
-
-
-
--- Commands used:
--- CREATE
--- NONCLUSTERED
--- INDEX
--- ON
--- SELECT
--- AS
--- FROM
--- JOIN/LEFT JOIN
--- GROUP BY
--- ORDER BY
--- WHERE
--- BETWEEN
--- AND
--- NEWID
--- LEFT
--- CAST
--- IN/NOT IN

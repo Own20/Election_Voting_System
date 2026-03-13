@@ -212,24 +212,27 @@ This project demonstrates proficiency in:
 
 ## Project Structure
 ```
+/data
+    sample_data.sql
+
 /database-schema
     schema.sql
-    ddl_tables.sql
 
-/stored-procedures
-    previouslyVoted.sql
-    primaryVoteCount.sql
-    distributePreferences.sql
+/docs
+    database_report.docx
+    ERD.png
 
 /indexing
     index_strategy.sql
+    partition_function.sql
 
 /queries
-    query_examples.sql
+    sample_query.sql
 
-/docs
-    ERD_diagram.png`
-    database_report.pdf
+/stored-procedures
+    distributePreferences.sql
+    previouslyVoted.sql
+    primaryVoteCount.sql
 ```
 
 ## Future Improvements

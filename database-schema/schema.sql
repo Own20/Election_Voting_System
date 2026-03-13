@@ -2,7 +2,11 @@
 -- PHYSICAL DATABASE DESIGN
 -- Description: DDL script to build the back-end schema for the AEC Voting System.
 -- ====================================================================================
+CREATE DATABASE votedb;
+GO
+
 USE votedb;
+GO
 
 
 
@@ -277,24 +281,3 @@ REFERENCES ElectionEvent(ElectionEventID);
 ALTER TABLE PreferenceTallyPerRoundPerCandidate
 ADD CONSTRAINT fk_preference_candidateid FOREIGN KEY (CandidateID) 
 REFERENCES Candidate(CandidateID);
-
-
-
-
-
--- Commands used:
--- CREATE
--- DROP
--- TABLE
--- IF
--- EXISTS
--- CONSTRAINT
--- PRIMARY KEY
--- ALTER
--- FOREIGN KEY
-
--- Data types used:
--- INT
--- DATE
--- VARCHAR
--- BIGINT
