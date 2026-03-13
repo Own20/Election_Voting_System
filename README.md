@@ -211,24 +211,24 @@ This project demonstrates proficiency in:
 - Secure data architecture
 
 ## Project Structure
-`/database-schema`
-`    schema.sql`
-`    ddl_tables.sql`
+/database-schema
+    schema.sql
+    ddl_tables.sql
 
-`/stored-procedures`
-`    previouslyVoted.sql`
-`    primaryVoteCount.sql`
-`    distributePreferences.sql`
+/stored-procedures
+    previouslyVoted.sql
+    primaryVoteCount.sql
+    distributePreferences.sql
 
-`/indexing`
-`    index_strategy.sql`
+/indexing
+    index_strategy.sql
 
-`/queries`
-`    query_examples.sql`
+/queries
+    query_examples.sql
 
-`/docs`
-`    ERD_diagram.png`
-`    database_report.pdf`
+/docs
+    ERD_diagram.png`
+    database_report.pdf
 
 ## Future Improvements
 Possible future extensions include:
