@@ -211,6 +211,7 @@ This project demonstrates proficiency in:
 - Secure data architecture
 
 ## Project Structure
+```
 /database-schema
     schema.sql
     ddl_tables.sql
@@ -229,6 +230,7 @@ This project demonstrates proficiency in:
 /docs
     ERD_diagram.png`
     database_report.pdf
+```
 
 ## Future Improvements
 Possible future extensions include:
